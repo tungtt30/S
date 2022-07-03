@@ -1,11 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const app = express()
+var bodyParser = require('body-parser')
 
 
 
 const authRouter = require('./routes/auth')
+const storeRouter = require('./routes/store')
 const postRouter = require('./routes/post')
+const userRouter = require('./routes/user')
 
 
 
@@ -30,16 +34,19 @@ const connectDB = async () => {
     }
 }
 connectDB()
-const app = express()
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(cors())
 app.get('/', (req, res) => res.send(
-    '<h1>Welcome to GodSeeker Server, this only server, Follow https://stupefied-neumann-58622d.netlify.app to visit app </h1>'
+    '<h1>Welcome to GodSeeker Server</h1>'
 ))
 
 app.use('/api/auth', authRouter)
 app.use('/api/posts', postRouter)
-app.use('/api/song', songRouter)
+app.use('/api/store', storeRouter)
+app.use('/api/user', userRouter)
+// app.use('/api/cart', cartRouter)
+
 
 const PORT = process.env.PORT || 5000
 

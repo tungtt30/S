@@ -1,33 +1,12 @@
-POST http://localhost:5000/api/song
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQ2YTcxOTFhZWEwMmY4NGZjNjY0ODYiLCJpYXQiOjE2NDE2MjU1NTN9.idW3_TMlLpZfgTr8xkbI-__rTLMizmYAF-BvzqzV4BQ
 
-{
-    "name": "Monster",
-    "singer": "YOASOBI",
-    "url": "https://drive.google.com/u/0/uc?id=1PyH-RUdr-ZiAR3VLROFJU3UOrXy5V_He&export=download",
-    "image": "https://i.ytimg.com/vi/dy90tA3TT1c/maxresdefault.jpg"
-}
-
-### 
-POST https://whispering-coast-98518.herokuapp.com/api/song
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQ2YTcxOTFhZWEwMmY4NGZjNjY0ODYiLCJpYXQiOjE2NDE2MjU1NTN9.idW3_TMlLpZfgTr8xkbI-__rTLMizmYAF-BvzqzV4BQ
-
-{
-    "name": "MonsterServer",
-    "singer": "YOASOBI",
-    "url": "https://drive.google.com/u/0/uc?id=1PyH-RUdr-ZiAR3VLROFJU3UOrXy5V_He&export=download",
-    "image": "https://i.ytimg.com/vi/dy90tA3TT1c/maxresdefault.jpg"
-}
 
 ### Login
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-    "username": "admin",
-    "password": "admin"
+    "username": "admin1",
+    "password": "admin1"
 }
 
 ### Create
@@ -36,36 +15,38 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "tung30",
-    "password": "chip"
+    "username": "admin1",
+    "password": "admin1"
 }
 
-### Get post data
-
-GET http://localhost:5000/api/song
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQzMTllYmNhNmZiNzNlNDgyM2Y2ZWEiLCJpYXQiOjE2NDEyMjcxOTN9.NLO1VC65FazMJDy-G5hnBQj32b1oGOFe7BiWvGwpZjs
-
-### GPUT
-
-PUT http://localhost:5000/api/song/61e4321ae0a450477b07dc8f
+### post
+POST http://localhost:5000/api/store
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJlOWI3ZTU5NmExNjUzODEyY2VkNGYiLCJpYXQiOjE2NTY2NTg4MjN9.Axb4pwG90EX2iKMdrvTAbm5ssrnMHX01nd4JZ7xSLMo
 
 {
-    "name": "C==",
-    "singer": "Thanwg nay ngu",
-    "url":"vue",
-    "image": "LEARNING"
+    "item": "sasunf 78",
+    "cost": 30000,
+    "description":"this is ip"
 }
 
-### delete post
-DELETE http://localhost:5000/api/song/61e431ede0a450477b07dc8c
+### get
+GET http://localhost:5000/api/store/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQzMTllYmNhNmZiNzNlNDgyM2Y2ZWEiLCJpYXQiOjE2NDEyMjcxOTN9.NLO1VC65FazMJDy-G5hnBQj32b1oGOFe7BiWvGwpZjs
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
-{
-    "title": "C==",
-    "description": "Thanwg nay ngu",
-    "url":"vue",
-    "status": "LEARNING"
-}
+### get co id
+GET http://localhost:5000/api/store/62be9b9b596a1653812ced54
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
+
+### get co id
+GET http://localhost:5000/api/store/user/admin1
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
+
+###
+GET http://localhost:5000/api/user/admin1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
+
