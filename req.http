@@ -22,12 +22,12 @@ Content-Type: application/json
 ### post
 POST http://localhost:5000/api/store
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJlOWI3ZTU5NmExNjUzODEyY2VkNGYiLCJpYXQiOjE2NTY2NTg4MjN9.Axb4pwG90EX2iKMdrvTAbm5ssrnMHX01nd4JZ7xSLMo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTY4NDI4NTh9.FXsxug7nhOZI-Hy3ERV5xVcKFDOd70fis7VuAm0-CvQ
 
 {
-    "item": "sasunf 78",
+    "item": "323232323 56",
     "cost": 30000,
-    "description":"this is ip"
+    "description":"this issd"
 }
 
 ### get
@@ -50,3 +50,12 @@ GET http://localhost:5000/api/user/admin1
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
+###
+POST http://localhost:5000/api/cart/admin1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
+
+{
+    "item": "62c16a60a5069846f84d799c",
+    "quantity": 4
+}

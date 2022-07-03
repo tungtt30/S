@@ -26,6 +26,17 @@ router.get('/:username', verifyToken, async (req, res) => {
     }
 })
 
+router.get('/:username/cart', verifyToken, async (req, res) => {
+    const username = req.params.username
+    try {
+        const userInfo = await User.findOne({ username }).select('-password')
+        res.status(200).json({ message: 'ok', userInfo })
+    } catch (error) {
+
+    }
+})
+
+
 
 
 module.exports = router
