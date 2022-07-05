@@ -15,17 +15,17 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "admin1",
-    "password": "admin1"
+    "username": "admin2",
+    "password": "admin2"
 }
 
 ### post
 POST http://localhost:5000/api/store
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTY4NDI4NTh9.FXsxug7nhOZI-Hy3ERV5xVcKFDOd70fis7VuAm0-CvQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMzZjc0ZmU2ZjhmM2JlMDA4NjQ1MTIiLCJpYXQiOjE2NTcwMTAwMDB9.khtFleaDwXtHBzfXuA38dzWOZjsLLJI8MwG29smHzkk
 
 {
-    "item": "323232323 56",
+    "item": "lt5",
     "cost": 30000,
     "description":"this issd"
 }
@@ -35,13 +35,13 @@ GET http://localhost:5000/api/store/
 Content-Type: application/json
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
-### get co id
-GET http://localhost:5000/api/store/62be9b9b596a1653812ced54
+### get my store
+GET http://localhost:5000/api/store/mystore
 Content-Type: application/json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTcwMTAwNjl9.EHaAnXdvtiiTBdQmnyBFoo7Lw5zPXLc80AkFtCiQJAM
 
 ### get co id
-GET http://localhost:5000/api/store/user/admin1
+GET http://localhost:5000/api/store/admin1
 Content-Type: application/json
 # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
@@ -51,11 +51,23 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
 ###
-POST http://localhost:5000/api/cart/admin1
+POST http://localhost:5000/api/cart/
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkNTBkYjFlZDliNmZjYTA0YjMyZGQiLCJpYXQiOjE2NTY1ODEzNjV9.Yz3kepciE7MGGKCMyP0AvZRe1Su0BqDigixeULaeNLk
 
 {
     "item": "62c16a60a5069846f84d799c",
-    "quantity": 4
+    "quantity": 10,
+    "user": "62c16a69a5069846f84d79a5"
 }
+
+###
+GET http://localhost:5000/api/cart/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTcwMDY3MzN9.trAwz7bTikhsFJUngJu0rPyVg7ZFUZ8ExhjOIX9FjPA
+
+
+### 
+POST http://localhost:5000/api/cart/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTcwMDkwNDF9.GyUkEtb37Pdcy17kDqZLNBSelTqS68vdzTprSxiUbCw

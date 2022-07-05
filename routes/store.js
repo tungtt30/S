@@ -5,9 +5,7 @@ const verifyToken = require('../middleware/auth')
 const User = require("../models/User")
 const Store = require('../models/Store')
 
-//@route GET api/posts
-//@desc get post
-//access: private
+// get store
 router.get('/', async (req, res) => {
     try {
         const store = await Store.find().populate('user', ['username'])
@@ -16,13 +14,25 @@ router.get('/', async (req, res) => {
         res.status(400).json({ message: 'bad request' })
     }
 })
-// check store by id
-router.get('/:id', async (req, res) => {
-    const id = req.params.id
+// check mystore
+router.get('/mystore', verifyToken, async (req, res) => {
+    const userId = req.userId
     try {
-        const store = await Store.findOne({ _id: id }).populate('user', ['username'])
+        const store = await Store.find({ user: userId }).populate('user', ['username'])
         res.json({ success: true, store })
     } catch (error) {
+        res.status(400).json({ message: 'bad request' })
+    }
+})
+
+//check other store 
+router.get('/:username', async (req, res) => {
+    const username = req.params.username
+    try {
+        const user = await User.findOne({ username })
+        const store = await Store.find({ user: user.id }).populate('user', ['username'])
+        res.json({ message: 'ok', store })
+    } catch (err) {
         res.status(400).json({ message: 'bad request' })
     }
 })

@@ -8,7 +8,7 @@ var bodyParser = require('body-parser')
 
 const authRouter = require('./routes/auth')
 const storeRouter = require('./routes/store')
-// const postRouter = require('./routes/post')
+const postRouter = require('./routes/post')
 const userRouter = require('./routes/user')
 const cartRouter = require('./routes/cart')
 
@@ -43,7 +43,7 @@ app.get('/', (req, res) => res.send(
 ))
 
 app.use('/api/auth', authRouter)
-// app.use('/api/posts', postRouter)
+app.use('/api/posts', postRouter)
 app.use('/api/store', storeRouter)
 app.use('/api/user', userRouter)
 app.use('/api/cart', cartRouter)
