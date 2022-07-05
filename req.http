@@ -58,7 +58,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmJkN
 {
     "item": "62c16a60a5069846f84d799c",
     "quantity": 10,
-    "user": "62c16a69a5069846f84d79a5"
 }
 
 ###
@@ -70,4 +69,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxN
 ### 
 POST http://localhost:5000/api/cart/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTcwMTQwMjJ9.X0w3zBNcJ-cVfj4s9KM3EWsAsWpNF5od7dnKQS9dGLw
+
+{
+    "item": "62c3f743e6f8f3be00864507",
+    "quantity": 20,
+}
+
+###
+
+GET http://localhost:5000/api/cart/
+Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MmMxNmE2OWE1MDY5ODQ2Zjg0ZDc5YTUiLCJpYXQiOjE2NTcwMDkwNDF9.GyUkEtb37Pdcy17kDqZLNBSelTqS68vdzTprSxiUbCw
+
