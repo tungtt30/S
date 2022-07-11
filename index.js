@@ -21,25 +21,27 @@ require('dotenv').config()
 
 
 const connectDB = async () => {
-    try {
-        await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@mern-learnit.pxtpz.mongodb.net/ChocoDB?retryWrites=true&w=majority`, {
-            // useCreateIndex: true,
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            // useFindAndModify: false
-        })
-        console.log('DB connected')
-    } catch (error) {
-        console.log(error.message)
-        process.exit(1)
-    }
+  try {
+    await mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_DOMAIN}/ChocoDB?retryWrites=true&w=majority`, {
+      // useCreateIndex: true,
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      // useFindAndModify: false
+    })
+    console.log('DB connected')
+  } catch (error) {
+    console.log(error.message)
+    process.exit(1)
+  }
 }
 connectDB()
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 app.use(express.json())
 app.use(cors())
 app.get('/', (req, res) => res.send(
-    '<h1>Welcome to GodSeeker Server</h1>'
+  '<h1>Welcome to GodSeeker Server</h1>'
 ))
 
 app.use('/api/auth', authRouter)
